@@ -20,8 +20,8 @@ vim.g.mapleader = ','
 -- Disable arrow keys
 map('n', '<up>', ':3wincmd +<cr>')
 map('n', '<down>', ':3wincmd -<cr>')
-map('n', '<left>', ':3wincmd <<cr>')
-map('n', '<right>', ':3wincmd ><cr>')
+map('n', '<right>', ':3wincmd <<cr>')
+map('n', '<left>', ':3wincmd ><cr>')
 
 -- Map Esc to kk
 map('i', 'kk', '<Esc>')
