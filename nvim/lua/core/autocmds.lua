@@ -29,6 +29,25 @@ autocmd('BufEnter', {
   command = 'set fo-=c fo-=r fo-=o'
 })
 
+-- Barbar - nvim-tree
+autocmd('BufWinEnter', {
+  pattern = '*',
+  callback = function()
+    if vim.bo.filetype == 'NvimTree' then
+      require'bufferline.state'.set_offset(31, 'FileTree')
+    end
+  end
+})
+
+autocmd('BufWinLeave', {
+  pattern = '*',
+  callback = function()
+    if vim.fn.expand('<afile>'):match('NvimTree') then
+      require'bufferline.state'.set_offset(0)
+    end
+  end
+})
+
 -- Settings for fyletypes:
 -- Disable line lenght marker
 augroup('setLineLenght', { clear = true })

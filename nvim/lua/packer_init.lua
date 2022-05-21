@@ -71,6 +71,16 @@ return packer.startup(function(use)
   use 'navarasu/onedark.nvim'
   use 'tanvirtin/monokai.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
+  use 'rktjmp/lush.nvim'
+
+  -- Terraform
+  use 'hashivim/vim-terraform'
+
+  -- Tabs Mgmt
+  use {
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
 
   -- LSP
   use 'neovim/nvim-lspconfig'
