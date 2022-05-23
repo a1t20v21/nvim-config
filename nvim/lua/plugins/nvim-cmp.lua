@@ -5,7 +5,6 @@
 -- Plugin: nvim-cmp
 -- url: https://github.com/hrsh7th/nvim-cmpa
 
-
 local cmp_status_ok, cmp = pcall(require, 'cmp')
 if not cmp_status_ok then
   return
@@ -44,7 +43,7 @@ cmp.setup {
     },
 
     -- Tab mapping
-    ['<C-1>'] = function(fallback)
+    ['<Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
@@ -53,7 +52,7 @@ cmp.setup {
         fallback()
       end
     end,
-    ['<C-2>'] = function(fallback)
+    ['<S-Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
@@ -68,6 +67,7 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = "nvim_lua" },
     { name = 'path' },
     { name = 'buffer' },
   },

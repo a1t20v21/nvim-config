@@ -65,3 +65,17 @@ map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
 
+-- vim-terraform settings
+-- ---------------------------------------------------------------------
+vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
+vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
+vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
+vim.cmd([[let g:terraform_fmt_on_save=1]])
+vim.cmd([[let g:terraform_align=1]])
+map("n", "<leader>ti", ":!terraform init<CR>", opts)
+map("n", "<leader>tv", ":!terraform validate<CR>", opts)
+map("n", "<leader>tp", ":!terraform plan<CR>", opts)
+map("n", "<leader>taa", ":!terraform apply -auto-approve<CR>", opts)
+
