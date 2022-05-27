@@ -25,4 +25,4 @@ require('plugins/barbar')
 require("plugins/null-ls")
 -- lsp setup
 require('lsp/rust')
-
+require('lsp/yaml')

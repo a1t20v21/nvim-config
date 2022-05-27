@@ -17,5 +17,7 @@ null_ls.setup {
     formatting.stylua,
     diagnostics.flake8,
     diagnostics.shellcheck,
+    diagnostics.puppet_lint,
+    formatting.puppet_lint,
   },
 }

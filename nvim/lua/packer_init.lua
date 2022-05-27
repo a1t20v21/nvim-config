@@ -93,6 +93,9 @@ return packer.startup(function(use)
   -- Terraform
   use 'hashivim/vim-terraform'
 
+  -- puppet
+  use 'rodjek/vim-puppet'
+
 	-- Statusline
 	use("nvim-lualine/lualine.nvim")
 
