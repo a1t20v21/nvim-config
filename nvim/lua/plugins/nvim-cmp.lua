@@ -65,11 +65,17 @@ cmp.setup {
 
   -- Load sources, see: https://github.com/topics/nvim-cmp
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
     { name = "nvim_lua" },
-    { name = 'path' },
-    { name = 'buffer' },
+    { name = "path" },
+    { name = "buffer" },
+    { name = "nvim_lsp_document_symbol" },
+    { name = "nvim_lsp_signature_help" },
+    { name = "latex_symbols" },
+    { name = "treesitter" },
+    { name = "cmp_git" },
+    { name = "crates" },
   },
 }
 

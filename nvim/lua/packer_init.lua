@@ -69,9 +69,9 @@ return packer.startup(function(use)
 		requires = {
 			"kyazdani42/nvim-web-devicons", -- optional, for file icon
 		},
-		config = function()
-			require("nvim-tree").setup({})
-		end,
+		-- config = function()
+		-- require("nvim-tree").setup({})
+		-- end,
 	})
 
   -- Indent line
@@ -202,17 +202,23 @@ return packer.startup(function(use)
   use({
     'hrsh7th/nvim-cmp',
     requires = {
-      'L3MON4D3/LuaSnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-cmdline',
-      'saadparwaiz1/cmp_luasnip',
-      'hrsh7th/cmp-nvim-lua',
-      { "kdheepak/cmp-latex-symbols" },
-    },
-    sources = {
-      { name = "latex_symbols" },
+      { 'L3MON4D3/LuaSnip' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-path' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-cmdline' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lua' },
+      { "hrsh7th/cmp-emoji" },
+      { 'kdheepak/cmp-latex-symbols' },
+      { "Saecki/crates.nvim", requires = { "nvim-lua/plenary.nvim" } },
+      {
+        "petertriho/cmp-git",
+        requires = { "nvim-lua/plenary.nvim" },
+        config = function()
+          require("cmp_git").setup()
+        end,
+      },
     },
   })
 
