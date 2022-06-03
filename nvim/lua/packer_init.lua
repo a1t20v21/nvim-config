@@ -199,7 +199,7 @@ return packer.startup(function(use)
 	})
 
   -- Autocomplete
-  use {
+  use({
     'hrsh7th/nvim-cmp',
     requires = {
       'L3MON4D3/LuaSnip',
@@ -209,8 +209,12 @@ return packer.startup(function(use)
       'hrsh7th/cmp-cmdline',
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-nvim-lua',
+      { "kdheepak/cmp-latex-symbols" },
     },
-  }
+    sources = {
+      { name = "latex_symbols" },
+    },
+  })
 
   -- Statusline
   use {
