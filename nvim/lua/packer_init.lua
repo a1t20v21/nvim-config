@@ -145,7 +145,7 @@ return packer.startup(function(use)
   use 'neovim/nvim-lspconfig'
   use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("jose-elias-alvarez/null-ls.nvim") -- formatters and linters
-
+  use 'simrat39/rust-tools.nvim'
   	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
@@ -211,7 +211,13 @@ return packer.startup(function(use)
       { 'hrsh7th/cmp-nvim-lua' },
       { "hrsh7th/cmp-emoji" },
       { 'kdheepak/cmp-latex-symbols' },
-      { "Saecki/crates.nvim", requires = { "nvim-lua/plenary.nvim" } },
+      { 'saecki/crates.nvim',
+        tag = 'v0.2.1',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+          require('crates').setup()
+        end,
+      },
       {
         "petertriho/cmp-git",
         requires = { "nvim-lua/plenary.nvim" },
