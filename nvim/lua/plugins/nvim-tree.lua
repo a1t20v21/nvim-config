@@ -31,7 +31,14 @@ nvim_tree.setup {
   open_on_setup_file = true,
   open_on_tab = true,
   update_cwd = true,
-  view = { width = 32 },
+  sort_by = "case_sensitive",
+  view = {
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
+  },
   renderer = {
     indent_markers = {
       enable = false,
@@ -51,7 +58,7 @@ nvim_tree.setup {
   },
   filters = {
     dotfiles = true,
-    custom = { 'node_modules', '.cache', '.bin' },
+    custom = { 'node_modules', '.cache', '.bin', "^.git$"},
   },
 }
 

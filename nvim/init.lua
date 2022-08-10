@@ -19,3 +19,7 @@ require("plugins/null-ls")
 -- lsp setup
 require('lsp/rust')
 require('lsp/yaml')
+require('lsp/json')
+require('lsp/terraformls')
+require('lsp/python')
+-- require('lsp/go')
