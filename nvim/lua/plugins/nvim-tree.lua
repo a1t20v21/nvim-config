@@ -17,6 +17,10 @@
 -- Global options
 local g = vim.g
 
+-- disable netrw
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 g.nvim_tree_width_allow_resize  = 1
 
 local status_ok, nvim_tree = pcall(require, 'nvim-tree')
@@ -33,6 +37,7 @@ nvim_tree.setup {
   update_cwd = true,
   sort_by = "case_sensitive",
   view = {
+    width = 32,
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
@@ -40,6 +45,7 @@ nvim_tree.setup {
     },
   },
   renderer = {
+    group_empty = true,
     indent_markers = {
       enable = false,
       icons = {

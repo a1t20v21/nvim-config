@@ -1,4 +1,4 @@
-pcall(require, "packer_compiled")
+-- pcall(require, "packer_compiled")
 
 -- Lua modules
 require('packer_init')

@@ -55,7 +55,18 @@ return packer.startup(function(use)
   -- use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 
-  	-- Syntax helpers
+  -- Syntax helpers
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = {
+			"kyazdani42/nvim-web-devicons", -- optional, for file icon
+		},
+    -- tag = 'nightly'
+		-- config = function()
+		-- require("nvim-tree").setup({})
+		-- end,
+	})
+
 	use("nvim-treesitter/nvim-treesitter")
 	use({
 		"windwp/nvim-autopairs",
@@ -64,19 +75,9 @@ return packer.startup(function(use)
 		end,
 	})
 
-	use({
-		"kyazdani42/nvim-tree.lua",
-		requires = {
-			"kyazdani42/nvim-web-devicons", -- optional, for file icon
-		},
-    tag = 'nightly'
-		-- config = function()
-		-- require("nvim-tree").setup({})
-		-- end,
-	})
 
   -- Indent line
-  use 'lukas-reineke/indent-blankline.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Tag viewer
   use 'preservim/tagbar'
@@ -147,7 +148,9 @@ return packer.startup(function(use)
   use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("jose-elias-alvarez/null-ls.nvim") -- formatters and linters
   use 'simrat39/rust-tools.nvim'
-  	-- snippets
+  use 'mfussenegger/nvim-dap'
+
+  -- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
