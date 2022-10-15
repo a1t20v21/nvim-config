@@ -155,8 +155,11 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- Telescope
-	use("nvim-telescope/telescope.nvim")
-	use({ "kevinhwang91/nvim-hlslens" })
+	use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+	-- use({ "kevinhwang91/nvim-hlslens" })
 
 	-- Better escaping
 	use({
