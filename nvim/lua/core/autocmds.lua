@@ -30,11 +30,13 @@ autocmd('BufEnter', {
 })
 
 -- Barbar - nvim-tree
+local bufferline_api = require('bufferline.api')
+
 autocmd('BufWinEnter', {
   pattern = '*',
   callback = function()
     if vim.bo.filetype == 'NvimTree' then
-      require'bufferline.state'.set_offset(31, 'FileTree')
+      bufferline_api.set_offset(31, 'FileTree')
     end
   end
 })
@@ -43,7 +45,7 @@ autocmd('BufWinLeave', {
   pattern = '*',
   callback = function()
     if vim.fn.expand('<afile>'):match('NvimTree') then
-      require'bufferline.state'.set_offset(0)
+      bufferline_api.set_offset(0)
     end
   end
 })
