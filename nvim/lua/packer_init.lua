@@ -161,6 +161,9 @@ return packer.startup(function(use)
   }
 	-- use({ "kevinhwang91/nvim-hlslens" })
 
+  -- Project Mgmt
+  use { "ahmedkhalf/project.nvim" }
+
 	-- Better escaping
 	use({
 		"max397574/better-escape.nvim",

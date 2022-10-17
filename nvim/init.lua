@@ -16,6 +16,7 @@ require("plugins/lualine")
 require('plugins/alpha-nvim')
 require('plugins/barbar')
 require("plugins/null-ls")
+require("plugins/nvim-projects")
 -- lsp setup
 require('lsp/rust')
 require('lsp/yaml')
